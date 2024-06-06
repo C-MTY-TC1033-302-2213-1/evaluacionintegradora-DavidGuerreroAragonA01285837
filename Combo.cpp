@@ -24,13 +24,17 @@ int Combo::calculaTotalPagar(){
     int costo;
     costo=precio*peso*clave;
 
+    int descuento;
+    descuento=0;
+
     if (clave==1){
-        costo-=25*costo/100;
+        descuento=(costo/100)*25;
     }
     else if(clave==2){
-        costo-=30*costo/100;
+        descuento=(costo/100)*30;
     }
 
+    costo=costo-descuento;
     return costo;
 
 }
